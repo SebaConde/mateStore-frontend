@@ -41,11 +41,9 @@ const FeaturedProducts = () => {
                           </div>
                         </div>
                       </CardContent>
-                      {/* <div className="flex justify-between gap-4 px-8">
+                      <div className="flex justify-between gap-4 px-8">
                         <h3 className="text-lg font-bold">{productName}</h3>
-                        <ProductTasteOrigin taste={product.taste} origin={product.origin}/>
-                      </div> */}
-                      
+                      </div>
                     </Card>
                   </div>
                 </CarouselItem>
@@ -53,7 +51,7 @@ const FeaturedProducts = () => {
             })}
         </CarouselContent>
         <CarouselPrevious />
-        <CarouselNext />
+        <CarouselNext className="hidden sm:flex"/>
       </Carousel>
     </div>
   );
