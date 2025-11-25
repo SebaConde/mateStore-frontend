@@ -11,11 +11,17 @@ import { Expand, ShoppingCart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import SkeletonSchema from "./skeletonSchema"; 
 import { ProductType } from "../../types/product";
+import { useCart } from "../../hooks/use-cart";
 
 const FeaturedProducts = () => {
   const { result, loading }:ResponseType= useGetFeaturedProducts();
 
+  // 👇 AGREGA ESTO
+  console.log('NEXT_PUBLIC_BACKEND_URL:', process.env.NEXT_PUBLIC_BACKEND_URL);
+  console.log('Full image URL example:', result?.[0] && `${process.env.NEXT_PUBLIC_BACKEND_URL}${result[0].images[0]?.url}`);
+
   const router = useRouter();
+  const {addItem} = useCart();
   
   return (
     <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
@@ -37,7 +43,7 @@ const FeaturedProducts = () => {
                         <div className="absolute w-full px-6 bottom-5 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition duration-200">
                           <div className="flex justify-center gap-x-6">
                             <IconButton onclick={() => router.push(`product/${slug}`)} icon={<Expand size={20} />} className="text-gray-600" />
-                            <IconButton onclick={() => console.log('carrito')} icon={<ShoppingCart size={20} />} className="text-gray-600"/>
+                            <IconButton onclick={() => addItem(product)} icon={<ShoppingCart size={20} />} className="text-gray-600"/>
                           </div>
                         </div>
                       </CardContent>
