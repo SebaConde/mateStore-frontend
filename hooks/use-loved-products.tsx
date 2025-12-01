@@ -8,7 +8,7 @@ interface UseLovedProductsType{
     lovedItems: ProductType[],
     addLovedItem: (data: ProductType) => void,
     removeLovedItem: (id:number) => void,   
-      toggleLoved: (product: ProductType) => void;
+    toggleLoved: (product: ProductType) => void;
 }
 
 export const useLovedProducts = create(persist<UseLovedProductsType>((set,get)=>({
@@ -32,7 +32,7 @@ export const useLovedProducts = create(persist<UseLovedProductsType>((set,get)=>
         const existingItem = currentLovedItem.find((item)=>item.id == data.id);
 
         if (existingItem) {
-            return toast("El producto ya existe en la lista", {
+            return toast("El producto ya está en la lista", {
             icon: <AlertTriangle className="text-yellow-500" />,
             style: {
               background: "#FEF3C7",
