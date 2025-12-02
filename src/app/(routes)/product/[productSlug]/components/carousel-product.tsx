@@ -17,7 +17,7 @@ const CarouselProduct = (props:CarouselProductProps) =>{
                 <CarouselContent>
                     {images?.map((image)=>(
                         <CarouselItem key={image.id}>
-                            <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${image.url}`} alt="Image product" className="rounded-lg"/>
+                            <img src={image.url} alt="Image product" className="rounded-lg"/>
                         </CarouselItem>
                     ))}
                 </CarouselContent>

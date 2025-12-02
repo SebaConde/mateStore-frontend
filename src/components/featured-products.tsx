@@ -16,10 +16,6 @@ import { useCart } from "../../hooks/use-cart";
 const FeaturedProducts = () => {
   const { result, loading }:ResponseType= useGetFeaturedProducts();
 
-  // 👇 AGREGA ESTO
-  console.log('NEXT_PUBLIC_BACKEND_URL:', process.env.NEXT_PUBLIC_BACKEND_URL);
-  console.log('Full image URL example:', result?.[0] && `${process.env.NEXT_PUBLIC_BACKEND_URL}${result[0].images[0]?.url}`);
-
   const router = useRouter();
   const {addItem} = useCart();
   
