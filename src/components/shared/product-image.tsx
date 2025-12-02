@@ -11,8 +11,7 @@ interface ProductImage{
      
     return(
         <div onClick={()=> router.push(`/product/${slug}`)} className="cursor-pointer">
-            <img 
-            src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${url}`} 
+            <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${url}`} 
             alt="product image" 
             className="w-24 h-24 overflow-hidden rounded-md sm:w-auto sm:h-32" />
         </div>

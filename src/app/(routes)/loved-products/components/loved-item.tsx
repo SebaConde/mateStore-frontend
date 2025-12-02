@@ -17,7 +17,7 @@ const LovedItem = (props: LovedItemProductProps) =>{
     const {addItem} = useCart();
 
     const addToCheckout=()=>{
-        addItem(product),
+        addItem(product)
         removeLovedItem(product.id)
     }
 
@@ -37,7 +37,7 @@ const LovedItem = (props: LovedItemProductProps) =>{
                         </button>
                     </div>
             </div>
-        </li>
+        </li>   
     )
 }
 

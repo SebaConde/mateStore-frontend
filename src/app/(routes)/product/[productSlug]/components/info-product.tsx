@@ -22,7 +22,7 @@ const InfoProduct = (props: InfoProductProps) =>{
     return (
         <div className="px-6">
             <div className="justify-between mb-3 sm:flex">
-                <h1 className="text-2xl">{product.productName}</h1>
+                <h1 className="text-2xl">{product.description}</h1>
             </div>
             <Separator className="my-4" />
             <p>{product.description}</p>
